@@ -57,7 +57,7 @@ const Login = ({ navigation }) => {
             <Block flex>
               <Block flex={0.17} middle>
                 <Text color="#8898AA" size={12}>
-                  Or sign up the classic way
+                  Or sign in the classic way
                 </Text>
               </Block>
               <Block flex center>
@@ -66,21 +66,6 @@ const Login = ({ navigation }) => {
                   behavior="padding"
                   enabled
                 >
-                  <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-                    <Input
-                      borderless
-                      placeholder="Name"
-                      iconContent={
-                        <Icon
-                          size={16}
-                          color={argonTheme.COLORS.ICON}
-                          name="hat-3"
-                          family="ArgonExtra"
-                          style={styles.inputIcons}
-                        />
-                      }
-                    />
-                  </Block>
                   <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                     <Input
                       borderless
@@ -111,34 +96,6 @@ const Login = ({ navigation }) => {
                         />
                       }
                     />
-                    <Block row style={styles.passwordCheck}>
-                      <Text size={12} color={argonTheme.COLORS.MUTED}>
-                        password strength:
-                      </Text>
-                      <Text bold size={12} color={argonTheme.COLORS.SUCCESS}>
-                        {' '}
-                        strong
-                      </Text>
-                    </Block>
-                  </Block>
-                  <Block row width={width * 0.75}>
-                    <Checkbox
-                      checkboxStyle={{
-                        borderWidth: 3,
-                      }}
-                      color={argonTheme.COLORS.PRIMARY}
-                      label="I agree with the"
-                    />
-                    <Button
-                      style={{ width: 100 }}
-                      color="transparent"
-                      textStyle={{
-                        color: argonTheme.COLORS.PRIMARY,
-                        fontSize: 14,
-                      }}
-                    >
-                      Privacy Policy
-                    </Button>
                   </Block>
                   <Block middle>
                     <Button
@@ -147,7 +104,7 @@ const Login = ({ navigation }) => {
                       onPress={() => navigation.navigate('App')}
                     >
                       <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                        CREATE ACCOUNT
+                        LOG IN
                       </Text>
                     </Button>
                   </Block>
@@ -164,7 +121,7 @@ const Login = ({ navigation }) => {
 const styles = StyleSheet.create({
   registerContainer: {
     width: width * 0.9,
-    height: height * 0.78,
+    height: height * 0.48,
     backgroundColor: '#F4F5F7',
     borderRadius: 4,
     shadowColor: argonTheme.COLORS.BLACK,
@@ -209,7 +166,7 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
   createButton: {
-    width: width * 0.5,
+    width: width * 0.4,
     marginTop: 25,
   },
 });
