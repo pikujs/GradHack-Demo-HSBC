@@ -8,7 +8,7 @@ import {
   ScrollView,
   Image,
 } from 'react-native';
-import { colors } from '../../../theme';
+import { colors } from '../../theme';
 import {
   Avatar,
   Button,
@@ -18,6 +18,8 @@ import {
   Text,
   Divider,
 } from 'react-native-paper';
+
+import { Block, theme } from 'galio-framework';
 
 const styles = StyleSheet.create({
   root: {
@@ -36,7 +38,6 @@ const styles = StyleSheet.create({
 });
 
 const EventDetail = ({ navigation }) => {
-  const { from } = navigation.state.params;
   return (
     <SafeAreaView>
       <ScrollView>

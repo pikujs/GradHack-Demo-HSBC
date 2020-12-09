@@ -224,7 +224,7 @@ const transactions = ({ route, navigation }) => {
   ];
 
   const transactions = route.params;
-  item = transactions;
+  let item = transactions;
 
   const categoryListHeightAnimationValue = useRef(new Animated.Value(115))
     .current;

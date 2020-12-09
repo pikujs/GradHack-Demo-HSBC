@@ -20,9 +20,13 @@ import Login from '../screens/Login';
 
 import Leaderboard from '../screens/community/Leaderboard';
 import EventsScreen from '../screens/community/Challenge';
+import EventDetail from '../screens/community/EventDetail';
+import LeaderDetail from '../screens/community/LeaderDetail';
 import BudgetHome from '../screens/BudgetHome';
 
 import BudgetScreens from '../screens/budget';
+
+import RewardsScreen from '../screens/Rewards/Rewards';
 
 // drawer
 import CustomDrawerContent from './Menu';
@@ -161,15 +165,15 @@ function BudgetStack(props) {
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              transparent
-              white
-              title="Home"
+              title="My Budget"
+              options
+              optionLeft="Expense"
+              optionRight="Transactions"
               navigation={navigation}
               scene={scene}
             />
           ),
           cardStyle: { backgroundColor: '#FFFFFF' },
-          headerTransparent: true,
         }}
       />
       <Stack.Screen
@@ -178,15 +182,16 @@ function BudgetStack(props) {
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              title="Expenses"
-              back
               white
-              transparent
+              back
+              title="Expenses"
+              bgColor={argonTheme.COLORS.ACTIVE}
+              titleColor="white"
+              iconColor="white"
               navigation={navigation}
               scene={scene}
             />
           ),
-          headerTransparent: true,
         }}
       />
       <Stack.Screen
@@ -195,10 +200,12 @@ function BudgetStack(props) {
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              title="Transactions"
-              back
               white
-              transparent
+              back
+              title="Transactions"
+              bgColor={argonTheme.COLORS.ACTIVE}
+              titleColor="white"
+              iconColor="white"
               navigation={navigation}
               scene={scene}
             />
@@ -221,6 +228,50 @@ function BudgetStack(props) {
             />
           ),
           headerTransparent: true,
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+function RewardsStack(props) {
+  return (
+    <Stack.Navigator initialRouteName="Rewards" mode="card" headerMode="screen">
+      <Stack.Screen
+        name="Rewards"
+        component={RewardsScreen}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              white
+              back
+              title="Rewards"
+              bgColor={argonTheme.COLORS.ACTIVE}
+              titleColor="white"
+              iconColor="white"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: '#FFFFFF' },
+        }}
+      />
+      <Stack.Screen
+        name="ScratchScreen"
+        component={BudgetScreens.expense}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              white
+              back
+              title="Scratch"
+              bgColor={argonTheme.COLORS.ACTIVE}
+              titleColor="white"
+              iconColor="white"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
         }}
       />
     </Stack.Navigator>
@@ -252,15 +303,16 @@ function HomeStack(props) {
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              title="Home"
-              back
               white
-              transparent
+              back
+              title="LeaderBoard"
+              bgColor={argonTheme.COLORS.ACTIVE}
+              titleColor="white"
+              iconColor="white"
               navigation={navigation}
               scene={scene}
             />
           ),
-          headerTransparent: true,
         }}
       />
       <Stack.Screen
@@ -269,15 +321,52 @@ function HomeStack(props) {
         options={{
           header: ({ navigation, scene }) => (
             <Header
-              title="Home"
-              back
               white
-              transparent
+              back
+              title="Events"
+              bgColor={argonTheme.COLORS.ACTIVE}
+              titleColor="white"
+              iconColor="white"
               navigation={navigation}
               scene={scene}
             />
           ),
-          headerTransparent: true,
+        }}
+      />
+      <Stack.Screen
+        name="LeaderboardDetails"
+        component={LeaderDetail}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              white
+              back
+              title="Leaderboard Details"
+              bgColor={argonTheme.COLORS.ACTIVE}
+              titleColor="white"
+              iconColor="white"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="EventDetails"
+        component={EventDetail}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              white
+              back
+              title="Event Details"
+              bgColor={argonTheme.COLORS.ACTIVE}
+              titleColor="white"
+              iconColor="white"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
         }}
       />
     </Stack.Navigator>
@@ -384,7 +473,7 @@ function AppStack(props) {
       <Drawer.Screen name="Home" component={HomeStack} />
       <Drawer.Screen name="My Budget" component={BudgetStack} />
       <Drawer.Screen name="Profile" component={ProfileStack} />
-      <Drawer.Screen name="Payments" component={Register} />
+      <Drawer.Screen name="Payments" component={RewardsStack} />
       <Drawer.Screen name="Rewards" component={ElementsStack} />
       <Drawer.Screen name="Saved Articles" component={ArticlesStack} />
     </Drawer.Navigator>

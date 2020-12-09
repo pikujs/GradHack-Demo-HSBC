@@ -210,7 +210,7 @@ class Header extends React.Component {
         <Button
           shadowless
           style={[styles.tab, styles.divider]}
-          onPress={() => navigation.navigate('Leaderboard')}
+          onPress={() => navigation.navigate(optionLeft || 'Leaderboard')}
         >
           <Block row middle>
             <Icon
@@ -227,7 +227,7 @@ class Header extends React.Component {
         <Button
           shadowless
           style={styles.tab}
-          onPress={() => navigation.navigate('Events')}
+          onPress={() => navigation.navigate(optionRight || 'Events')}
         >
           <Block row middle>
             <Icon

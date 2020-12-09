@@ -22,7 +22,7 @@ class DrawerItem extends React.Component {
       case 'My Budget':
         return (
           <Icon
-            name="chart-bar-32"
+            name="chart-pie-35"
             family="ArgonExtra"
             size={14}
             color={focused ? 'white' : argonTheme.COLORS.PRIMARY}
@@ -40,8 +40,8 @@ class DrawerItem extends React.Component {
       case 'Saved Articles':
         return (
           <Icon
-            name="album-2"
-            family="ArgonExtra"
+            name="rss-feed"
+            family="MaterialIcons"
             size={14}
             color={focused ? 'white' : argonTheme.COLORS.PRIMARY}
           />
@@ -49,8 +49,8 @@ class DrawerItem extends React.Component {
       case 'Profile':
         return (
           <Icon
-            name="chart-pie-35"
-            family="ArgonExtra"
+            name="face"
+            family="MaterialCommunityIcons"
             size={14}
             color={focused ? 'white' : argonTheme.COLORS.INFO}
           />
@@ -58,8 +58,8 @@ class DrawerItem extends React.Component {
       case 'Payments':
         return (
           <Icon
-            name="money-coins"
-            family="ArgonExtra"
+            name="cloud"
+            family="FontAwesome5"
             size={14}
             color={focused ? 'white' : argonTheme.COLORS.WARNING}
           />
@@ -67,8 +67,8 @@ class DrawerItem extends React.Component {
       case 'Sign Out':
         return (
           <Icon
-            name="fat-remove"
-            family="ArgonExtra"
+            name="sign-out"
+            family="FontAwesome"
             size={14}
             color={focused ? 'white' : 'rgba(0,0,0,0.5)'}
           />

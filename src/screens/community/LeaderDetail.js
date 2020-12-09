@@ -8,9 +8,10 @@ import {
   SafeAreaView,
   ScrollView,
 } from 'react-native';
-import { colors } from '../../../theme';
+import { colors } from '../../theme';
 import Leaderboard from 'react-native-leaderboard';
 import { Card, Title } from 'react-native-paper';
+import { Block } from 'galio-framework';
 
 const Leader = () => {
   let data = [
@@ -43,9 +44,8 @@ const styles = StyleSheet.create({
 });
 
 const LeaderDetail = ({ navigation }) => {
-  const { from } = navigation.state.params;
   return (
-    <SafeAreaView>
+    <Block flex centre>
       <ScrollView>
         <View style={styles.root}>
           <StatusBar barStyle="light-content" />
@@ -53,7 +53,7 @@ const LeaderDetail = ({ navigation }) => {
           <Leader />
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </Block>
   );
 };
 

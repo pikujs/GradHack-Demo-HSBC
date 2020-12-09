@@ -1,8 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-export default function App() {
+export default RewardsScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.navBar}>
@@ -11,7 +10,7 @@ export default function App() {
       <View style={styles.navBar1}></View>
       <View style={styles.body1}>
         <Image
-          source={require('./Images/image2.jpg')}
+          source={require('../../../assets/images/image2.jpg')}
           style={{
             width: 160,
             height: 160,
@@ -20,7 +19,7 @@ export default function App() {
           }}
         />
         <Image
-          source={require('./Images/image0.jpg')}
+          source={require('../../../assets/images/image0.jpg')}
           style={{
             width: 160,
             height: 160,
@@ -32,7 +31,7 @@ export default function App() {
       </View>
       <View style={styles.body2}>
         <Image
-          source={require('./Images/image3.jpeg')}
+          source={require('../../../assets/images/image3.jpeg')}
           style={{
             width: 160,
             height: 160,
@@ -41,7 +40,7 @@ export default function App() {
           }}
         />
         <Image
-          source={require('./Images/image1.jpeg')}
+          source={require('../../../assets/images/image1.jpeg')}
           style={{
             width: 160,
             height: 160,
@@ -52,7 +51,7 @@ export default function App() {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

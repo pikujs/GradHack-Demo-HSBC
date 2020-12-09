@@ -9,12 +9,19 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
+  Dimensions,
   FlatList,
   Animated,
 } from 'react-native';
 import { VictoryPie } from 'victory-native';
 
+import { Block, theme } from 'galio-framework';
+import { Card } from '../../components/argon';
+import articles from '../../constants/articles';
+
 import { COLORS, FONTS, SIZES, icons, images } from '../../constants/budget';
+
+const { width } = Dimensions.get('screen');
 
 const Home = ({ navigation }) => {
   // dummy data
@@ -645,7 +652,7 @@ const Home = ({ navigation }) => {
     console.log(chartData);
 
     return (
-      <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <Block style={{ alignItems: 'center', justifyContent: 'center' }}>
         <VictoryPie
           data={chartData}
           labels={(datum) => `${datum.y}`}
@@ -687,13 +694,13 @@ const Home = ({ navigation }) => {
           ]}
         />
 
-        <View style={{ position: 'absolute', top: '42%', left: '42%' }}>
+        <Block style={{ position: 'absolute', top: '42%', left: '42%' }}>
           <Text style={{ ...FONTS.h1, textAlign: 'center' }}>
             {totalExpenseCount}
           </Text>
           <Text style={{ ...FONTS.body3, textAlign: 'center' }}>Expenses</Text>
-        </View>
-      </View>
+        </Block>
+      </Block>
     );
   }
 
@@ -774,7 +781,7 @@ const Home = ({ navigation }) => {
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: COLORS.lightGray2 }}>
+    <Block flex centre style={styles.home}>
       {/* Nav bar section */}
       {/* {renderNavBar()} */}
 
@@ -784,7 +791,10 @@ const Home = ({ navigation }) => {
       {/* Category Header Section */}
       {/*renderCategoryHeaderSection()*/}
 
-      <ScrollView contentContainerStyle={{ paddingBottom: 60 }}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.articles}
+      >
         {/*viewMode == 'list' && (
           <View>
             {renderCategoryList()}
@@ -792,13 +802,13 @@ const Home = ({ navigation }) => {
           </View>
         )*/}
         {viewMode == 'chart' && (
-          <View>
+          <Block flex>
             {renderChart()}
             {renderExpenseSummary()}
-          </View>
+          </Block>
         )}
       </ScrollView>
-    </View>
+    </Block>
   );
 };
 
@@ -812,6 +822,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 3,
+  },
+  home: {
+    width: width,
+  },
+  articles: {
+    width: width - theme.SIZES.BASE * 2,
+    paddingVertical: theme.SIZES.BASE,
   },
 });
 
